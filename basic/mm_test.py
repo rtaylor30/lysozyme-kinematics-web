@@ -19,7 +19,7 @@ class MichealisMenten:
   def __init__(self, s0, e0):
     self.s0 = s0
     self.e0 = e0
-    self.root_url = '/srv/media/'
+    self.root_url = 'static/'
 
   #an example of the kinetics
   def kinetics(self):
