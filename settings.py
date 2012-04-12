@@ -53,7 +53,9 @@ USE_L10N = True
 #MEDIA_URL = 'http://weitz.biology.gatech.edu/media/'
 
 STATIC_URL = "/static/"
-STATIC_ROOT = "static/"
+STATICFILES_DIRS = (
+    'static',
+)
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -93,6 +95,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
+    'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:

@@ -77,5 +77,6 @@ class MichealisMenten:
     pylab.legend(['flat','upward curved','downward curved'])
     figure_name_2 = 'turbidity_' + datetime.datetime.now().strftime("%s") + '.png'
     pylab.savefig(self.root_url + figure_name_2)
+    pylab.clf()
     return figure_name_1, figure_name_2
 

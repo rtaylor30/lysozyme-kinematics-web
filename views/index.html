@@ -1,7 +1,16 @@
 {% extends "core/_basic.html" %}
 {% block content %}
 <h2>Welcome to the basic webpage</h2>
-<img src="/{{ image_1 }}"></img>
-<img src="/{{ image_2 }}"></img>
-<img src="/{{ image_3 }}"></img>
+
+S: <input id="s" type="text"/><br/>
+Z: <input id="z" type="text"/><br/>
+<input id="btn" type="button" value="Work it"/><br/><br/>
+
+<script type="text/javascript">
+  $('#btn').click(function() {
+    $('#charts').attr('src', '/' + $('#s').val() + '/' + $('#z').val());
+  });
+</script>
+
+<iframe style="width: 100%; height: 80%" id="charts"></iframe>
 {% endblock content %}
