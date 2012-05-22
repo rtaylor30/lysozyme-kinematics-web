@@ -32,13 +32,14 @@ class MichealisMenten:
     N_points = 1000
     t = np.linspace(0,T,N_points).T
 
+    # Solve the ordinary differential equations for each timepoint t.
     z = odeint(lambda zed,t: mm_rate(zed,k),z_0,t)
 
     pylab.plot(t,z)
     pylab.legend(['$s$','$e$','$c','$j$'])
     pylab.xlabel('time')
     pylab.ylabel('concentration')
-    figure_name = 'kinetics_' + datetime.datetime.now().strftime("%s") + '.png'
+    figure_name = 'kinetics_' + str(self.s0) + '_' + str(self.e0) + '.png'
     pylab.savefig(self.root_url + figure_name)
     pylab.clf()
     return figure_name
@@ -64,7 +65,7 @@ class MichealisMenten:
     pylab.xlabel('time')
     pylab.ylabel('turbidity')
     pylab.legend(['$e_0$ = '+str(e_0) for e_0 in E_0])
-    figure_name_1 = 'simple_' + datetime.datetime.now().strftime("%s") + '.png'
+    figure_name_1 = 'simple_' + str(self.s0) + '_' + str(self.e0) + '.png'
     pylab.savefig(self.root_url + figure_name_1)
     pylab.clf()
 
@@ -75,7 +76,7 @@ class MichealisMenten:
     pylab.xlabel('time')
     pylab.ylabel('turbidity')
     pylab.legend(['flat','upward curved','downward curved'])
-    figure_name_2 = 'turbidity_' + datetime.datetime.now().strftime("%s") + '.png'
+    figure_name_2 = 'turbidity_' + str(self.s0) + '_' + str(self.e0) + '.png'
     pylab.savefig(self.root_url + figure_name_2)
     pylab.clf()
     return figure_name_1, figure_name_2

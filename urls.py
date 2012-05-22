@@ -6,7 +6,7 @@ from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
   (r'^$', 'basic.views.index'),
-  (r'(\d+)/(\d+)/$', 'basic.views.show'),
+  (r'show/$', 'basic.views.show'),
     # Example:
     # (r'^gatech/', include('gatech.foo.urls')),
 
