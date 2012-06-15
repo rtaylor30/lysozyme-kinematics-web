@@ -1,0 +1,26 @@
+div.top-panel-banner {
+  width: 100%;
+  height: 120px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  position: relative;
+}
+
+div.sign-in-container {
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+}
+
+a.sign-in {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+div.sign-in-form {
+  display: none;
+  position: absolute;
+  height: 120px;
+  width: 300px;
+}

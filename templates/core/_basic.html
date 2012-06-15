@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+  {% load resource_tags %}
+
+  {% css_link '/ui-lightness/jquery-ui-1.8.20.custom.css' %}
+
+  {% js_script '/jquery/jquery-1.7.2.min.js' %}
+  {% js_script '/jquery/jquery-ui-1.8.20.custom.min.js' %}
+  {% js_script '/highcharts/highcharts.js' %}
+  {% js_script '/highcharts/highcharts-more.js' %}
+  {% js_script '/highcharts/themes/gray.js' %}
+
+  {% block page_title %}<title>Lysozyme Kinematics</title>{% endblock page_title %}
+  {% block javascript_scripts %}{% endblock javascript_scripts %}
+  {% block css_links %}{% endblock css_links %}
+</head>
+<body>
+  {% block content %}{% endblock content %}
+</body>
+</html>
