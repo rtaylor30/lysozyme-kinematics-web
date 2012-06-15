@@ -1,2 +1,36 @@
-A Django based project that will host the research project to find the effectiveness of multiple turbidity assays on lysozymes.
+= Lysozyme Turbidity Assays
 
+This web application is designed to allow people to upload multiple turbidity assays, and through 
+computation be able to extract useful information about the lysozyme's activity.
+
+== Overall Framework
+
+This web application is based on Python 2.7 on Django 1.4. The overall structure of the web 
+application is defined below.
+
+This uses the standard MVC design pattern, and the configuration is completed through the 
+settings.py. The database engine used is SQLite3, as there doesn't need to be any significant data 
+storage and retrieval.
+
+== Structure
+
+General structure and layout of the code.
+
+==== Views
+
+The views are laid out in a RESTful format. The resource is the folder name, and the pages to 
+modify the information is found in the for of index, edit, and show HTML pages.
+
+==== URLs
+
+The URLs are also following a RESTful format. The resources are the compute request, compute 
+response and the personal pages. Each of these resources have the general CRUD mechanisms in place.
+If one of the CRUD mechanisms should not be used, there is an explicit 404 rendering from that 
+method.
+
+==== Models
+
+Each model represents a resource, which will be used in a RESTful manner. These resources will also
+be used in the database to hold the previous information about computational requests from certain
+user. There is also a generic guest user that has no password, and anyone can access. This means 
+that anyone using the guest user to run requests, will be allowing it to be viewed publicly.

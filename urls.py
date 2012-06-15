@@ -1,18 +1,20 @@
 from django.conf.urls.defaults import *
 
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+def rest_generator(pkg, resource):
+  return patterns(pkg + '.views.' + resource, 
+    (r'^$','index'),
+    (r'^new/$', 'create'),
+    (r'^([0-9]+)/$', 'show'),
+    (r'^([0-9]+)/edit/$', 'edit'),
+    (r'^([0-9]+)/update/$', 'update'),
+    (r'^([0-9]+)/delete/$', 'delete'),
+  )
 
 urlpatterns = patterns('',
-  (r'^$', 'basic.views.index'),
-  (r'show/$', 'basic.views.show'),
-    # Example:
-    # (r'^gatech/', include('gatech.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-    # (r'^admin/', include(admin.site.urls)),
+  (r'^$', 'basic.views.index.index'),
+  (r'^personal/$', include(rest_generator('basic', 'personal'))),
+  (r'^compute/$', 'turbidity.views.index.index'),
+  (r'^compute_request/', include(rest_generator('turbidity', 'compute_request'))),
+  (r'^compute_response/', include(rest_generator('turbidity', 'compute_response'))),
+  (r'^admin/', include('admin.urls')),
 )
