@@ -1,6 +1,7 @@
 from django.db import models
 from parsers import RequestParser
 from parsers import ResponseParser
+from django.contrib.auth.models import User
 
 class ComputeRequest(models.Model):
   """
@@ -10,7 +11,7 @@ class ComputeRequest(models.Model):
   """
   
   time_requested = models.DateTimeField()
-  request_by = models.User()
+  request_by = User()
   
   def request_data(self, request_parser=None):
     """ Retrieve the data that is associated with this request. """

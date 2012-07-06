@@ -13,6 +13,7 @@ def rest_generator(pkg, resource):
 urlpatterns = patterns('',
   (r'^$', 'basic.views.index.index'),
   (r'^personal/$', include(rest_generator('basic', 'personal'))),
+  (r'^user/', include(rest_generator('basic', 'user'))),
   (r'^compute/$', 'turbidity.views.index.index'),
   (r'^compute_request/', include(rest_generator('turbidity', 'compute_request'))),
   (r'^compute_response/', include(rest_generator('turbidity', 'compute_response'))),

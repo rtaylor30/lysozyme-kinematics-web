@@ -11,11 +11,12 @@ This is the home page.
     });
   </script>
   
-  {% js_script 'mm_graphs.js' %}
+  <script type="text/javascript" src="/static/js/mm_graphs.js"></script>
+  <script type="text/javascript" src="/static/js/index.js"></script>
 {% endblock javascript_scripts %}
 
 {% block css_links %}
-  {% css_link '/root_index.css' %}
+  <link rel="stylesheet" type="text/css" href="/static/css/root_index.css"/>
 {% endblock css_links %}
 
 {% block top_panel %}

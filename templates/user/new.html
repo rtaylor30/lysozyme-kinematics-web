@@ -1,0 +1,31 @@
+{% extends "core/_top_content_bottom.html" %}
+
+{% comment %}<!--
+This is the home page.
+-->{% endcomment %}
+
+{% block javascript_scripts %}
+
+{% endblock javascript_scripts %}
+
+{% block css_links %}
+
+{% endblock css_links %}
+
+{% block top_panel %}
+
+{% endblock top_panel %}
+
+{% block content_panel %}
+  Create a new user.
+
+  <form action="/user/new/" method="post">{% csrf_token %}
+    Username: <input type="text" name="username"/><br/>
+    Password: <input type="password" name="password"/><br/>
+    <input type="submit" value="Submit"/>
+  </form>
+{% endblock content_panel %}
+
+{% block bottom_panel %}
+
+{% endblock bottom_panel %}

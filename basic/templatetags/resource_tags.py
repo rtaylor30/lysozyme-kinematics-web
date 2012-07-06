@@ -2,8 +2,9 @@ from django import template
 from django.utils.html import conditional_escape
 from django.utils.safestring import mark_safe
 
-@register.filter(needs_autoescape=True)
-@stringfilter
+register = template.Library()
+
+@register.tag
 def css_link(href, autoescape=None):
   """ Create a helper method to generate links tags for stylesheets. """
   if autoescape:
@@ -13,8 +14,7 @@ def css_link(href, autoescape=None):
     
   return '<link rel="stylesheet" type="text/css" href="/static/css%s" />' % esc(href)
   
-@register.filter(needs_autoescape=True)
-@stringfilter
+@register.tag
 def js_script(src, autoescape=None):
   """ Create a helper method to generate script tags for javascripts. """
   if autoescape:
@@ -24,8 +24,7 @@ def js_script(src, autoescape=None):
     
   return '<script type="text/javascript" src="/static/js%s"></script>' % esc(src)
   
-@register.filter(needs_autoescape=True)
-@stringfilter
+@register.tag
 def img_tag(src, autoescape=None):
   """ Create a helper method to generate img tags for images. """
   if autoescape:

@@ -1,6 +1,7 @@
 {% extends "core/_basic.html" %}
 {% block content %}
-  {% css_link '/core/layout.css' %}
+  <link rel="stylesheet" type="text/css" href="/static/css/core/layout.css"/>
+  
   <div class="layout-top-panel">{% block top_panel %}{% endblock top_panel %}</div>
   <div class="layout-content-panel">{% block content_panel %}{% endblock content_panel %}</div>
   <div class="layout-bottom-panel">{% block bottom_panel %}{% endblock bottom_panel %}</div>
