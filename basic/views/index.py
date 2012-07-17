@@ -1,5 +1,6 @@
 # Create your views here.
 from django import forms
+from django.core.context_processors import csrf
 from django.http import HttpResponse
 from django.template import RequestContext
 from django.shortcuts import render_to_response
@@ -11,7 +12,9 @@ class LysoForm(forms.Form):
   initial_enzyme = forms.FloatField()
 
 def index(request):
-  return render_to_response('index.html')
+  local = {}
+  local.update(csrf(request))
+  return render_to_response('index.html', local)
 
 def show(request):
   lyso_form = LysoForm(request.POST)

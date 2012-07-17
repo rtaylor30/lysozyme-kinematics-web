@@ -1,15 +1,37 @@
-{% extends "../core/_top_left_content_bottom.html" %}
+{% extends "core/_top_left_content_bottom.html" %}
 {% block javascript_scripts %}
+  
 {% endblock javascript_scripts %}
 
+{% block css_links %}
+  <link rel="stylesheet" type="text/css" href="/static/css/personal/index.css"/>
+{% endblock css_links %}
+
 {% block top_panel %}
+<h3 class="page-title">Lysozyme Kinematics Personal Web Page</h3>
+<div style="padding-top: 60px; padding-right: 20px;">{% include "core/_user_toolbar.html" %}</div>
 {% endblock top_panel %}
 
 {% block left_panel %}
+
 {% endblock left_panel %}
 
 {% block content_panel %}
+  <h4>Your Previous Runs</h4>
+  <table class="previous-runs">
+    <thead>
+      <th>Run ID</th>
+      <th>Date</th>
+      <th>Run Title</th>
+      <th>Status</th>
+      <th>View</th>
+    </thead>
+    <tbody>
+      
+    </tbody>
+  </table>
 {% endblock content_panel %}
 
 {% block bottom_panel %}
+ 
 {% endblock bottom_panel %}

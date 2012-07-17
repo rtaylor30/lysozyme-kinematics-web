@@ -1,7 +1,29 @@
 body {
   font-family: "Verdana", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+window {
+  margin: 0;
+  padding: 0;
+}
+
+table.layout-table {
+  width: 100%;
+  border: 0;
+  padding: 0;
+  min-height: 640px;
+}
+
+table.layout-table tr {
+  vertical-align: top;
 }
 
 td.layout-left-panel {
   width: 300px;
+}
+
+td.layout-content-panel {
+  
 }

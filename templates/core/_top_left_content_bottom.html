@@ -1,8 +1,8 @@
 {% extends "core/_basic.html" %}
 {% block content %}
-  {% css_link '/core/layout.css' %}
+  <link rel="stylesheet" type="text/css" href="/static/css/core/layout.css" />
   <div class="layout-top-panel">{% block top_panel %}{% endblock top_panel %}</div>
-  <table border=0>
+  <table class="layout-table">
     <tbody>
       <tr>
         <td class="layout-left-panel">{% block left_panel %}{% endblock left_panel %}</td>
