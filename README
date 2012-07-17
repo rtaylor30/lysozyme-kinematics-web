@@ -3,6 +3,29 @@
 This web application is designed to allow people to upload multiple turbidity assays, and through
 computation be able to extract useful information about the lysozyme's activity.
 
+== Accepted Request Data Types
+
+Tab delimited with columns of floating point values, with headers.
+
+==== Tab Delimited Data Format
+
+The format will consist of 3 headers, and the data.
+
+TITLE
+DELTA_T
+CALIBRATION_VALUES
+
+(E0,S0) (E0,S0) (E0,S0) ...
+val val val ...
+val val val ...
+val val val ...
+...
+
+== Request Display
+
+The requests will be parsed and then outputted to the user for verification. If the data is wrong,
+they will be given the option to re-upload the data.
+
 == Overall Framework
 
 This web application is based on Python 2.7 on Django 1.4. The overall structure of the web
