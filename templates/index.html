@@ -1,0 +1,58 @@
+{% extends "core/_top_content_bottom.html" %}
+
+{% comment %}<!--
+This is the home page.
+-->{% endcomment %}
+
+{% block javascript_scripts %}
+  <script type="text/javascript">
+    $('#btn').click(function() {
+      $('#charts').attr('src', '/' + $('#s').val() + '/' + $('#z').val());
+    });
+  </script>
+
+  <script type="text/javascript" src="/static/js/mm_graphs.js"></script>
+  <script type="text/javascript" src="/static/js/index.js"></script>
+{% endblock javascript_scripts %}
+
+{% block css_links %}
+  <link rel="stylesheet" type="text/css" href="/static/css/root_index.css"/>
+{% endblock css_links %}
+
+{% block top_panel %}
+  {% comment %}<!--
+    The top panel will act more as a banner. There will be some overall navigation links on the
+    right hand side. Other than the basic overall navigation, there will be more specific navigation
+    in the left panel.
+  -->{% endcomment %}
+  <div class="top-panel-banner">
+    <div class="logo-container">
+      Weitz Lab - Lysozyme Turbidity Model
+    </div>
+    <div class="sign-in-container">
+      <a class="sign-in" href="#">Sign In</a>
+      <form action="/user/login/" method="POST">{% csrf_token %}
+        <div class="sign-in-form">
+          <div class="basic-text-input">
+            <span>Username</span>
+            <input type="text" name="username" />
+          </div>
+          <div class="basic-text-input">
+            <span>Password</span>
+            <input type="password" name="password" />
+          </div>
+          <div><a class="use-guest-anchor" href="/personal?use_guest=true">Use Guest Account</a></div>
+          <input type="submit" value="Sign In"></input>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock top_panel %}
+
+{% block content_panel %}
+  {{ error }}
+{% endblock content_panel %}
+
+{% block bottom_panel %}
+
+{% endblock bottom_panel %}

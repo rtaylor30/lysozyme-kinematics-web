@@ -1,0 +1,42 @@
+{% extends "core/_top_content_bottom.html" %}
+
+{% comment %}<!--
+This is the home page.
+-->{% endcomment %}
+
+{% block javascript_scripts %}
+  <script type="text/javascript" src="/static/js/user/index.js"></script>
+{% endblock javascript_scripts %}
+
+{% block css_links %}
+  
+{% endblock css_links %}
+
+{% block top_panel %}
+  
+{% endblock top_panel %}
+
+{% block content_panel %}
+  <input id="create_user" type="button" value="Create User"></input>
+
+  <table>
+    <thead>
+      <th></th>
+      <th>Username</th>
+      <th>Role</th>
+    </thead>
+    <tbody>
+      {% for user in users %}
+        <tr>
+          <td><input type="checkbox" name="users" value=""/></td>
+          <td>{{ user.username }}</td>
+          <td></td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock content_panel %}
+
+{% block bottom_panel %}
+  
+{% endblock bottom_panel %}

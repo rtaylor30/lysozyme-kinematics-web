@@ -1,0 +1,1 @@
+namespace = function(ns) {var nss = ns.split('.');var _ns = '';for (var i = 0; i < nss.length; i++) {_ns += nss[i]; eval('typeof('+_ns+')!="undefined"'+'||('+_ns+'={})'); _ns += '.';}return eval(ns);};

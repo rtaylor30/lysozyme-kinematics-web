@@ -1,0 +1,21 @@
+div.user-toolbar-container {
+  float: right;
+  height: 30px;
+  color: white;
+
+}
+
+div.user-toolbar-container li {
+  float: right;
+  list-style-type: none;
+  margin: 2px 8px 2px 8px;
+}
+
+div.user-toolbar-container a {
+  text-decoration: none;
+  color: white;
+}
+
+div.user-toolbar-container a:hover {
+  text-decoration: none;
+}
